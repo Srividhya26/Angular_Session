@@ -1,0 +1,91 @@
+{
+    "$schema": "./node_modules\\@angular/cli/lib/config/schema.json",
+    "cli": {
+      "analytics": "99abda27-ecd5-412f-9fb6-70b09fca68c7"
+    },
+    "version": 1,
+    "newProjectRoot": "projects",
+    "projects": {
+      "AngularWithoutCLI": {
+        "projectType": "application",
+        "schematics": {
+          "@schematics/angular:application": {
+            "strict": true
+          }
+        },
+        "root": "",
+        "sourceRoot": "src",
+        "prefix": "app",
+        "architect": {
+          "build": {
+            "builder": "@angular-devkit/build-angular:browser",
+            "options": {
+              "outputPath": "dist/AngularWithoutCLI",
+              "index": "src/index.html",
+              "main": "src/main.ts",
+              "polyfills": "src/polyfills.ts",
+              "tsConfig": "tsconfig.app.json",
+              "assets": [
+                "src/assets"
+              ],
+              "styles": [
+                "src/styles.css"
+              ],
+              "scripts": []
+            },
+            "configurations": {
+              "production": {
+                "budgets": [
+                  {
+                    "type": "initial",
+                    "maximumWarning": "500kb",
+                    "maximumError": "1mb"
+                  },
+                  {
+                    "type": "anyComponentStyle",
+                    "maximumWarning": "2kb",
+                    "maximumError": "4kb"
+                  }
+                ],
+                "fileReplacements": [
+                  {
+                    "replace": "src/environments/environment.ts",
+                    "with": "src/environments/environment.prod.ts"
+                  }                 
+                ],
+                "outputHashing": "all"
+              },
+              "development": {
+                "buildOptimizer": false,
+                "optimization": false,
+                "vendorChunk": true,
+                "extractLicenses": false,
+                "sourceMap": true,
+                "namedChunks": true
+              }
+            },
+            "defaultConfiguration": "production"
+          },
+          "serve": {
+            "builder": "@angular-devkit/build-angular:dev-server",
+            "configurations": {
+              "production": {
+                "browserTarget": "AngularWithoutCLI:build:production"
+              },
+              "development": {
+                "browserTarget": "AngularWithoutCLI:build:development"
+              }
+            },
+            "defaultConfiguration": "development"
+          },
+          "extract-i18n": {
+            "builder": "@angular-devkit/build-angular:extract-i18n",
+            "options": {
+              "browserTarget": "AngularWithoutCLI:build"
+            }
+          }
+        }
+      }
+    },
+    "defaultProject": "AngularWithoutCLI"
+  }

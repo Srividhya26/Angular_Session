@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <div>
+            <label for="email"> Email  </label>
+        </div>
+        
+        <div class="design">
+            <input type="text" email placeholder="Email" id="email" name="email" 
+             [(ngModel)]= "email.name" #name="ngModel">
+        </div><hr>     
+
+        <div>   
+            <label for="phnNo"> Phone Number </label>
+        </div>
+
+        <div class="design">
+            <input type="text" [(ngModel)]= "email.length" name="phnNo" placeholder="Phone Number"
+              #length="ngModel" number [lengthValue]= "email.length"/>
+        </div><hr>
+
+        <div>
+            <label for="date"> Date </label>
+        </div>
+
+        <div class="design">
+            <input type="text" name="date" placeholder="Date" [(ngModel)] = "email.date" #date = "ngModel" 
+            date (dateValue)= "DateValid($event)">
+        </div>
+
+    </div>
+
+   
+</body>
+</html>

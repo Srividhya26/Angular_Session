@@ -1,0 +1,27 @@
+{
+    "name": "angular-without-cli",
+    "version": "0.0.0",
+    "scripts": {
+        "ng": "ng",
+        "start": "ng serve"
+    },
+    "dependencies": {
+        "@angular-devkit/build-angular": "^13.0.3",
+        "@angular/cdk": "^13.0.2",
+        "@angular/common": "^13.0.2",
+        "@angular/compiler": "^13.0.2",
+        "@angular/compiler-cli": "^13.0.2",
+        "@angular/core": "^13.0.2",
+        "@angular/forms": "^13.0.2",
+        "@angular/platform-browser": "^13.0.2",
+        "@angular/platform-browser-dynamic": "^13.0.2",
+        "bootstrap": "^5.1.3",
+        "rxjs": "^6.6.0",
+        "tslib": "^2.3.1",
+        "typescript": "^4.4.2",
+        "zone.js": "^0.11.4"
+    },
+    "devDependencies": {
+        "@angular/cli": "^13.0.3"
+    }
+}
