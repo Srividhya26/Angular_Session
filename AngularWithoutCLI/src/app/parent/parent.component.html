@@ -27,6 +27,10 @@
         </div><hr>
 
         <div>
+            <input type="text" [(ngModel)] = "email.separator" date (separator) = "email.separator">
+        </div>
+
+        <div>
             <label for="date"> Date </label>
         </div>
 
@@ -34,6 +38,7 @@
             <input type="text" name="date" placeholder="Date" [(ngModel)] = "email.date" #date = "ngModel" 
             date (dateValue)= "DateValid($event)">
         </div>
+
 
     </div>
 

@@ -10,7 +10,8 @@ export class ParentComponent{
     email = {
         name: '',
         length : '',
-        date : ''
+        date : '',
+        separator : ''
     }
 
     isValid = true;

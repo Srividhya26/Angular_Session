@@ -7,6 +7,8 @@ import { Directive, ElementRef, OnInit ,Input, HostListener,Output, EventEmitter
 
 export class DateDirective implements OnInit{
 
+    @Input() separator = '';
+
     dateValidation : boolean = true;
     transformedDate !: string;
     date !: number;
@@ -52,11 +54,10 @@ export class DateDirective implements OnInit{
 
             else
             {
-                this.transformedDate =  date.slice(0,2) + '/' + date.slice(2,4) + '/' + date.slice(4,8);
+                this.transformedDate =  date.slice(0,2) + this.separator + date.slice(2,4) + this.separator + date.slice(4,8);
                 this.ele.nativeElement.style.border = "solid green 2px";
                 this.ele.nativeElement.value = this.transformedDate;
                 this.dateValidation = true;
-
             }
 
         }
